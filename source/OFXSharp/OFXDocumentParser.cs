@@ -254,11 +254,11 @@ namespace OFXSharp
          if (header[3] != "SECURITY:NONE")
             throw new OFXParseException("OFX security unsupported");
 
-         if (header[4] != "ENCODING:USASCII")
-            throw new OFXParseException("ASCII Format unsupported:" + header[4]);
+         if ( (header[4] != "ENCODING:USASCII") & (header[4] != "ENCODING:UTF-8") )
+            throw new OFXParseException("Encoding Format unsupported:" + header[4]);
 
-         if (header[5] != "CHARSET:1252")
-            throw new OFXParseException("Charecter set unsupported:" + header[5]);
+         if ( (header[5] != "CHARSET:1252") & (header[5] != "CHARSET:CSUNICODE") )
+            throw new OFXParseException("Character set unsupported:" + header[5]);
 
          if (header[6] != "COMPRESSION:NONE")
             throw new OFXParseException("Compression unsupported");
