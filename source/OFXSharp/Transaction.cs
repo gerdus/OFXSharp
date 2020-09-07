@@ -110,15 +110,7 @@ namespace OFXSharp
       /// <returns>Enum version of given transaction type string</returns>
       private OFXTransactionType GetTransactionType(string transactionType)
       {
-        try
-        {
-            return (OFXTransactionType)Enum.Parse(typeof(OFXTransactionType), transactionType);
-        }
-        catch (Exception)
-        {
-            return OFXTransactionType.OTHER;
-        }
-         
+         return (OFXTransactionType) Enum.Parse(typeof (OFXTransactionType), transactionType);
       }
 
       /// <summary>
